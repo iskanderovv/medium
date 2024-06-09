@@ -6,7 +6,7 @@
 }
 
 body {
-    /* background: #000000; */
+    background: #000000;
     color: #fff;
     font-family: "Jomolhari", serif;
 }
@@ -35,21 +35,9 @@ body {
     font-size: 12px;
     font-weight: 500;
     line-height: 19.22px;
-    color: #000000;
-    border-radius: 6px;
+    color: #ffffff;
 }
 
-.nav-register__login{
-    border: 2px solid black;
-    padding: 7px 20px;
-}
-
-.nav-register__signup{
-    border: 2px solid black;
-    padding: 7px 20px;
-    background: black;
-    color: white;
-}
 
 .hero__img {
     width: 100%;
@@ -80,7 +68,8 @@ body {
     justify-content: center;
     align-items: center;
     color: #ffffff;
-    border: 3px solid #F0DE36
+    border: 3px solid #F0DE36;
+    display: block;
 }
 
 .swiper-slide img {
@@ -91,6 +80,10 @@ body {
 
 .swiper-slide__body {
     padding: 7px 12px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .swiper-slide__title {

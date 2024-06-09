@@ -1,26 +1,14 @@
 const signupForm = document.querySelector('.signup__form');
 const submitBtn = document.querySelector('.signup-btn');
 
-
 const registerUser = (e) => {
     e.preventDefault();
-
-    // const configureToast = (message, type) => {
-    //     Toastify({
-    //         text: message,
-    //         className: type,
-    //         style: {
-    //             background: "linear-gradient(to right, #00b09b, #96c93d)",
-    //         }
-    //     }).showToast();
-    // }
 
     const User = {
         name: signupForm["signup-firstname"].value,
         email: signupForm["signup-email"].value,
         password: signupForm["signup-password"].value
     }
-
 
     submitBtn.setAttribute("disabled", true);
     submitBtn.textContent = "Registering...";
@@ -31,21 +19,25 @@ const registerUser = (e) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(User)
-
     })
-        .then(res => res.json())
-        .then(data => {
-            submitBtn.removeAttribute("disabled");
-            console.log(data);
-            if (data.status == "success") {
-                signupForm.textContent = "Success";
-                location.replace(location.origin + "/pages/login.html");
-            } else {
-                signupForm.textContent = "Sign Up";
-                alert("Nimadir xato !!!")
-            }
-        })
+    .then(res => res.json())
+    .then(data => {
+        submitBtn.removeAttribute("disabled");
+        submitBtn.textContent = "Sign Up";
+        if (data.status === "success") {
+            signupForm.textContent = "Success";
+            location.replace(location.origin + "/pages/login.html");
+        } else if (data.status === "error") {
+            alert(data.message || "An error occurred during registration.");
+        } else {
+            signupForm.textContent = "Sign Up";
+        }
+    })
+    .catch(error => {
+        submitBtn.removeAttribute("disabled");
+        submitBtn.textContent = "Sign Up";
+        alert("An error occurred: " + error.message);
+    });
 }
-
 
 signupForm.addEventListener('submit', registerUser);

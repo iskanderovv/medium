@@ -17,9 +17,11 @@ function Post(title, description, image, tags, author) {
     this.author = author;
 }
 
+const author = JSON.parse(localStorage.getItem('email'))
+
 const createPost = (e) => {
     e.preventDefault();
-    let postData = new Post(postTitle.value, postDescr.value, postImg.value, postTag.value, 'Akbar Iskandarov');
+    let postData = new Post(postTitle.value, postDescr.value, postImg.value, postTag.value, author);
     console.log(postData);
 
     const tokenUser = JSON.parse(localStorage.getItem('token'));

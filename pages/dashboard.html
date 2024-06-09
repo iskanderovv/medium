@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jomolhari&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <div class="dashboard__items">
+            <h4 class="dashboard-items__title">Dashboard</h4>
+            <ul class="dashboard-items__list">
+                <li class="dashboard-items__item">
+                    <p class="dashboard-items__heading">Akbar Iskanderov</p>
+                    <small>Author</small>
+                </li>
+            </ul>
+        </div>
+        <div class="dashboard__post">
+            <h2 class="dashobard-post__heading">Create New Post</h2>
+            <form action="#" class="dashboard-post__form">
+                <div class="dashboard-post-form__title">
+                    <label for="post-title" class="post-title">Post Title</label>
+                    <input type="text" id="post-title" class="post-title-input">
+                </div>
+                <div class="post-inputs">
+                    <div class="dashboard-post-form__img">
+                        <label for="post-img" class="post-img post-title">Post Image </label>
+                        <input type="url" id="post-img" class="post-img-input">
+                    </div>
+                    <div class="dashboard-post-form__tags">
+                        <label for="post-tag" class="post-tag post-title">Tags</label>
+                        <div class="dashboard-items__tags">
+                            <input type="text" id="post-tag" class="post-tag-input">
+                            <button class="post-tag-btn">Add Tags</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-items__description">
+                    <label for="post-description" class="post-tag post-title">Post Description</label>
+                    <textarea name="" rows="10" id="post-description" class="post-description"></textarea>
+                </div>
+                <div class="create-post-btn">
+                    <button class="create-post-btn__button">Create Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="../script/dashboard.js"></script>
+</body>
+
+</html>
